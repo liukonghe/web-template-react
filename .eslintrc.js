@@ -52,7 +52,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': OFF,
     '@typescript-eslint/explicit-function-return-type': OFF,
     '@typescript-eslint/explicit-module-boundary-types': OFF,
-    '@typescript-eslint/no-explicit-any': WARN,
+    '@typescript-eslint/no-explicit-any': OFF,
 
     'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
     'react/jsx-indent-props': [ERROR, 2],
@@ -69,7 +69,7 @@ module.exports = {
 
     'lines-between-class-members': [ERROR, 'always'],
     'linebreak-style': [ERROR, 'unix'],
-    quotes: [ERROR, 'single'],
+    quotes: [ERROR, 'single', { allowTemplateLiterals: true }],
     semi: [ERROR, 'always'],
     'no-unused-expressions': WARN,
     'no-plusplus': OFF,

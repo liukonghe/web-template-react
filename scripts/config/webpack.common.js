@@ -60,13 +60,23 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
     alias: {
-      Src: resolve(PROJECT_PATH, './src'),
-      Components: resolve(PROJECT_PATH, './src/components'),
-      Utils: resolve(PROJECT_PATH, './src/utils'),
+      '@Src': resolve(PROJECT_PATH, './src'),
+      '@Components': resolve(PROJECT_PATH, './src/components'),
+      '@Utils': resolve(PROJECT_PATH, './src/utils'),
+      '@Packages': resolve(PROJECT_PATH, './src/packages'),
     },
   },
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.(tsx?|js)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          cache: true,
+        },
+      },
       {
         test: /\.(tsx?|js)$/,
         loader: 'babel-loader',

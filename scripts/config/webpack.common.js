@@ -149,6 +149,10 @@ module.exports = {
             ignore: ['**/index.html'],
           },
         },
+        {
+          from: resolve(PROJECT_PATH, './node_modules/blockly/media'),
+          to: resolve(PROJECT_PATH, './dist/media'),
+        },
       ],
     }),
     new WebpackBar({
